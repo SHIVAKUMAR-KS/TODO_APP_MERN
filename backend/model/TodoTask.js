@@ -9,4 +9,4 @@ const TodoTaskSchema =new mongoose.Schema({
     updatedAt:{type:Date,default:Date.now}
 })
 
-export default TodoTask;
+export default TodoTaskSchema;
