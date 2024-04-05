@@ -4,12 +4,11 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import { userSignupSchema , userLoginSchema } from './validation/UserValidation.js';
+import { userRegisterSchema , userLoginSchema } from './validation/UserValidation.js';
 import User from './model/User.js';
 import tokenValidity from './middlewares/tokenValidity.js';
 import TodoTask from './model/TodoTask.js';
-import todovalidationSchema from './validation/Todovalidation.js';
-
+import todoValidationSchema from './validation/TodoValidation.js';
 
 dotenv.config();
 const app = express();
@@ -22,11 +21,11 @@ mongoose.connect(process.env.DATABASE_URL);
 
 
 
-app.post('/signup' , async (req , res) => {
+app.post('/register' , async (req , res) => {
     const {username , email , password} = req.body;
     // Zod validation
     const userData = {username , email , password}
-    const validatedData = userSignupSchema.safeParse(userData);
+    const validatedData = userRegisterSchema.safeParse(userData);
 
     if(validatedData.success) {
         try{
@@ -46,7 +45,7 @@ app.post('/signup' , async (req , res) => {
 
 
 
-app.post('/signin', async (req, res) => {
+app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     
     // Zod validation
@@ -113,7 +112,7 @@ app.post('/pages/todos', async (req, res) => {
         if (tokenVerify) {
             const todoData = {title: title, description: description, completed: completed, user: userId  };
 
-            const validatedTodo = todovalidationSchema.safeParse(todoData);
+            const validatedTodo = todoValidationSchema.safeParse(todoData);
             if (validatedTodo.success) {
                 const todoUpload = await TodoTask.create(todoData);
                 if (todoUpload) {
