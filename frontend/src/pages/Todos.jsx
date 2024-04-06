@@ -46,7 +46,7 @@ const Todos = () => {
           console.log(data.msg);
         }
       } catch (error) {
-        console.error("Error checking token:", error);
+        console.error("Errors checking token:", error);
         navigate("/login");
         console.log(data.msg);
       }
