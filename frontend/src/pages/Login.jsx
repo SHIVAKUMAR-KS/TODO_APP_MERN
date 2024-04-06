@@ -21,7 +21,7 @@ const Login = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
 
-    const response = await fetch(`https://todo-app-mern-iota.vercel.app/signin`, {
+    const response = await fetch(`http://localhost:3000/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const Login = () => {
 
             <div className="form-division">or</div>
 
-            {/* <button className="google-auth-button">
+            * <button className="google-auth-button">
               <div className="google-icon-container">
                 <img
                   src="../../src/images/google.png"
@@ -92,7 +92,7 @@ const Login = () => {
                 />
               </div>
               Continue with Google
-            </button> */}
+            </button> 
 
             <span className="form-msg">
               Don't have an account?{" "}

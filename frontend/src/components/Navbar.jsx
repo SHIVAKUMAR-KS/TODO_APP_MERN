@@ -50,7 +50,7 @@ const Navbar = () => {
     <>
     <nav>
       <div className="maxWidth">
-        <Link onClick={hideLinkBox} to="/" className="nav-logo">BH Todos</Link>
+        <Link onClick={hideLinkBox} to="/" className="nav-logo">Shiva's Todos</Link>
         <ul className={`links ${showBars ? 'links-expanded' : ''}`}>
           <Link onClick={hideLinkBox} to="/" className="nav-link">Home</Link>
           <Link onClick={hideLinkBox} to="/todos" className="nav-link">Todos</Link>
