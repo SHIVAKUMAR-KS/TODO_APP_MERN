@@ -21,7 +21,7 @@ const Login = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
 
-    const response = await fetch(`http://localhost:3000/login`, {
+    const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

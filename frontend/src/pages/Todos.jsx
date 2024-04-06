@@ -30,7 +30,7 @@ const Todos = () => {
       navigate("/login");
     } else {
       try {
-        const response = await fetch(`http://localhost:3000/pages/todos`, {
+        const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/todos`, {
           method: "GET",
           headers: {
             "Authorization": token, 
@@ -71,7 +71,7 @@ const Todos = () => {
     const todoData = {title: title, description: description, completed: false , userId: userId};
   
     try {
-      const response = await fetch(`http://localhost:3000/pages/todos`, {
+      const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/todos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const Todos = () => {
 
 
   const deleteRequest = async (id) => {
-    const response = await fetch(`http://localhost:3000/pages/todos/${id}`, {
+    const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
