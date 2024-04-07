@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 const cors = require('cors');
 const corsConfig ={
-    method:["GET","POST","DELETE","PUT"]
+    methods:["GET","POST","DELETE","PUT"]
 };
 app.options("",cors(corsConfig));
 app.use(cors(corsConfig));
