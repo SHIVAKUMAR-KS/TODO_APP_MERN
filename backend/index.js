@@ -13,8 +13,12 @@ import todoValidationSchema from './validation/TodoValidation.js';
 dotenv.config();
 const app = express();
 app.use(express.json());
-
-app.use(cors());
+const cors = require('cors');
+const corsConfig ={
+    method:["GET","POST","DELETE","PUT"]
+};
+app.options("",cors(corsConfig));
+app.use(cors(corsConfig));
 
 
 mongoose.connect(process.env.DATABASE_URL);
