@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import Button from "../components/Button";
@@ -30,7 +29,7 @@ const Todos = () => {
       navigate("/login");
     } else {
       try {
-        const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/todos`, {
+        const response = await fetch(`https://be-test-1-xh93.onrender.com/pages/todos`, {
           method: "GET",
           headers: {
             "Authorization": token, 
@@ -46,7 +45,7 @@ const Todos = () => {
           console.log(data.msg);
         }
       } catch (error) {
-        console.error("Errors checking token:", error);
+        console.error("Error checking token:", error);
         navigate("/login");
         console.log(data.msg);
       }
@@ -71,7 +70,7 @@ const Todos = () => {
     const todoData = {title: title, description: description, completed: false , userId: userId};
   
     try {
-      const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/todos`, {
+      const response = await fetch(`https://be-test-1-xh93.onrender.com/pages/todos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +103,7 @@ const Todos = () => {
 
 
   const deleteRequest = async (id) => {
-    const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/${id}`, {
+    const response = await fetch(`https://be-test-1-xh93.onrender.com/pages/todos/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

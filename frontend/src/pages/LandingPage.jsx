@@ -5,8 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import video from '../images/video2.mp4'
 
 const LandingPage = () => {
-  const backgroundImageUrl = "https://imgs.search.brave.com/Cdid-Ljh-WIjSqap88oerJlbPlUBaEE6t8PYr1Wp5Yg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/ZGV2ZWxvcGVyLWNv/ZGluZy1pbi1waHAu/anBnP3dpZHRoPTEw/MDAmZm9ybWF0PXBq/cGcmZXhpZj0wJmlw/dGM9MA";
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +15,7 @@ const LandingPage = () => {
         navigate("/login");
       } else {
         try {
-          const response = await fetch(`http://localhost:3000/pages/landingpage`, {
+          const response = await fetch(`https://be-test-1-xh93.onrender.com/pages/landingpage`, {
             method: 'GET',
             headers: {
               "Authorization": `${token}`
@@ -51,10 +49,6 @@ const LandingPage = () => {
   }, [navigate]);
 
   return (
-    <div
-      className="bg-cover bg-center bg-no-repeat h-screen md:h-full"
-      style={{ backgroundImage: `url(${backgroundImageUrl})`, width: '100vw', height: '100vh', overflow: 'hidden' }}
-    >
     <div className="landing-page">
       <div className="max-landing">
         <div className="landing-contents">
@@ -68,9 +62,10 @@ const LandingPage = () => {
           <Link to="/todos"><Button buttonClass="landing-button" buttonValue="Create your first todo" /></Link>
         </div>
       {/* <img src="../../src/images/landing-image3.png" className="landing-image" /> */}
-      
+      {/* <video autoPlay muted playsInline loop className='landing-image'>
+        <source src={video} type='video/mp4' />
+      </video> */}
       </div>
-    </div>
     </div>
   );
 }

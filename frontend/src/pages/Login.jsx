@@ -21,7 +21,7 @@ const Login = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
 
-    const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/login`, {
+    const response = await fetch(`https://be-test-1-xh93.onrender.com/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const Login = () => {
 
     const data = await response.json();
 
-    console.log(data.token , data.userId);
+    console.log(data.token, data.userId);
 
     //Show the alert menu based on given conditions and params
     const alertState = (state, message, className) => {
@@ -43,14 +43,14 @@ const Login = () => {
       }, 3000);
     };
 
-    if (data.status == 400) {
+    if (data.status === 400) {
       alertState(true, "Password is incorrect", "danger-alert alert");
-    } else if (data.status == 200) {
+    } else if (data.status === 200) {
       localStorage.setItem("token", data.token);
-      localStorage.setItem("userId" , data.userId);
+      localStorage.setItem("userId", data.userId);
       alertState(true, "Email and Password are correct", "success-alert alert");
-      setTimeout(() => navigate("/"), 1000);
-    } else if (data.status == 411) {
+      navigate("/");
+    } else if (data.status === 411) {
       alertState(true, "Cannot find user with such email", "danger-alert alert");
     }
   };
@@ -82,9 +82,9 @@ const Login = () => {
 
             <input type="submit" value="Login" className="form-submit" />
 
-            <div className="form-division">or</div>
+            {/* <div className="form-division">or</div>
 
-            * <button className="google-auth-button">
+             <button className="google-auth-button">
               <div className="google-icon-container">
                 <img
                   src="../../src/images/google.png"
@@ -92,7 +92,7 @@ const Login = () => {
                 />
               </div>
               Continue with Google
-            </button> 
+            </button>  */}
 
             <span className="form-msg">
               Don't have an account?{" "}

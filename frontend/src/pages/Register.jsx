@@ -18,7 +18,7 @@ const Register = () => {
   const registerSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`https://todo-app-mern-ggeu.vercel.app/register`, {
+    const response = await fetch(`https://be-test-1-xh93.onrender.com/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
