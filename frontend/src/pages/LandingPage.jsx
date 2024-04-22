@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import '../App.css';
 import Button from '../components/Button';
 import { Link, useNavigate } from 'react-router-dom';
-import video from '../images/video2.mp4'
+
 
 const LandingPage = () => {
   const navigate = useNavigate();

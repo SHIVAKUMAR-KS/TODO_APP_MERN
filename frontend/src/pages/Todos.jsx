@@ -171,7 +171,7 @@ const Todos = () => {
           <div className="todo-contents">
             <header>
               Create a <span className="gradient1">Todo</span> Now{" "}
-              <span className="emoji">😍😁😁</span>
+              <span className="emoji">😍😁❤️👋😎</span>
             </header>
           </div>
           <div className="todo-upper-section">
