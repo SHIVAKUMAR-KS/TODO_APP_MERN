@@ -3,7 +3,7 @@ import '../App.css'
 import { Link, useNavigate } from 'react-router-dom'
 import Alert from '../components/Alert'
 import FloatingShapes from '../components/FloatingShapes'
-import img1 from '../images/img1.png'
+import img4 from '../images/img4.png'
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -56,7 +56,7 @@ const Register = () => {
   return (
     <>
       <div className='auth-page'>
-        <img src={img1} className='register-image' />
+        <img src={img4} className='register-image' />
 
         {showAlert && <Alert alertMessage={alertMessage} alertType={alertClass} />}
 
