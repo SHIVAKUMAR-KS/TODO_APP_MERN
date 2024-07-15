@@ -38,7 +38,7 @@ const Register = () => {
 
 
     if (data.status == 409) {
-      alertState(true, "User already exists", "danger-alert alert")
+      alertState(true,"User already exists", "danger-alert alert")
     }
     else if (data.status == 200) {
       alertState(true, "User registered successfully", "success-alert alert")
